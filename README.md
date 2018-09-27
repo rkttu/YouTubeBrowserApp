@@ -2,7 +2,7 @@
 
 ![Image of YouTube Browser App](screenshot.png)
 
-**Download v1.0 Release: https://github.com/rkttu/YouTubeBrowserApp**
+**[Download v1.0 Release](https://github.com/rkttu/YouTubeBrowserApp/releases/tag/1.0)**
 
 This app is a separate app that only plays YouTube videos, regardless of the behavior of your web browser. It helps you to watch both your web browser and YouTube video at the same time.
 
