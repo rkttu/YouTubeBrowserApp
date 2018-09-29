@@ -1,5 +1,7 @@
 # YouTube Browser App
 
+[![Build status](https://ci.appveyor.com/api/projects/status/0593n4i609cfjedu?svg=true)](https://ci.appveyor.com/project/rkttu/youtubebrowserapp)
+
 ![Image of YouTube Browser App](screenshot.png)
 
 **[Download v1.0 Release](https://github.com/rkttu/YouTubeBrowserApp/releases/tag/1.0)**
