@@ -8099,4 +8099,13 @@
   <data name="NotifyIcon.Text" xml:space="preserve">
     <value>YouTube Browser App</value>
   </data>
+  <data name="BackButton.Text" xml:space="preserve">
+    <value>뒤로</value>
+  </data>
+  <data name="NextButton.Text" xml:space="preserve">
+    <value>앞으로</value>
+  </data>
+  <data name="RefreshButton.Text" xml:space="preserve">
+    <value>새로 고침</value>
+  </data>
 </root>

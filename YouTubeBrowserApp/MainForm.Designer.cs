@@ -35,9 +35,14 @@
             this.NotifyIconContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.RestoreWindowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
-            this.CloseAppToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.AboutAppToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.CloseAppToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStrip = new System.Windows.Forms.ToolStrip();
+            this.BackButton = new System.Windows.Forms.ToolStripButton();
+            this.RefreshButton = new System.Windows.Forms.ToolStripButton();
+            this.NextButton = new System.Windows.Forms.ToolStripButton();
             this.NotifyIconContextMenuStrip.SuspendLayout();
+            this.ToolStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // WebView
@@ -75,30 +80,75 @@
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             resources.ApplyResources(this.toolStripMenuItem1, "toolStripMenuItem1");
             // 
-            // CloseAppToolStripMenuItem
-            // 
-            this.CloseAppToolStripMenuItem.Name = "CloseAppToolStripMenuItem";
-            resources.ApplyResources(this.CloseAppToolStripMenuItem, "CloseAppToolStripMenuItem");
-            this.CloseAppToolStripMenuItem.Click += new System.EventHandler(this.CloseAppToolStripMenuItem_Click);
-            // 
             // AboutAppToolStripMenuItem
             // 
             this.AboutAppToolStripMenuItem.Name = "AboutAppToolStripMenuItem";
             resources.ApplyResources(this.AboutAppToolStripMenuItem, "AboutAppToolStripMenuItem");
             this.AboutAppToolStripMenuItem.Click += new System.EventHandler(this.AboutAppToolStripMenuItem_Click);
             // 
+            // CloseAppToolStripMenuItem
+            // 
+            this.CloseAppToolStripMenuItem.Name = "CloseAppToolStripMenuItem";
+            resources.ApplyResources(this.CloseAppToolStripMenuItem, "CloseAppToolStripMenuItem");
+            this.CloseAppToolStripMenuItem.Click += new System.EventHandler(this.CloseAppToolStripMenuItem_Click);
+            // 
+            // ToolStrip
+            // 
+            this.ToolStrip.BackColor = System.Drawing.SystemColors.Window;
+            this.ToolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.ToolStrip.ImageScalingSize = new System.Drawing.Size(25, 25);
+            this.ToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.BackButton,
+            this.NextButton,
+            this.RefreshButton});
+            resources.ApplyResources(this.ToolStrip, "ToolStrip");
+            this.ToolStrip.Name = "ToolStrip";
+            this.ToolStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.ToolStrip.Stretch = true;
+            // 
+            // BackButton
+            // 
+            this.BackButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this.BackButton, "BackButton");
+            this.BackButton.Name = "BackButton";
+            this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
+            // 
+            // RefreshButton
+            // 
+            this.RefreshButton.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.RefreshButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this.RefreshButton, "RefreshButton");
+            this.RefreshButton.Name = "RefreshButton";
+            this.RefreshButton.Click += new System.EventHandler(this.RefreshButton_Click);
+            // 
+            // NextButton
+            // 
+            this.NextButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this.NextButton, "NextButton");
+            this.NextButton.Name = "NextButton";
+            this.NextButton.Click += new System.EventHandler(this.NextButton_Click);
+            // 
             // MainForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.BackColor = System.Drawing.SystemColors.Window;
             this.Controls.Add(this.WebView);
+            this.Controls.Add(this.ToolStrip);
             this.DoubleBuffered = true;
+            this.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.KeyPreview = true;
             this.Name = "MainForm";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.VisibleChanged += new System.EventHandler(this.MainForm_VisibleChanged);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.MainForm_KeyUp);
             this.Resize += new System.EventHandler(this.MainForm_Resize);
             this.NotifyIconContextMenuStrip.ResumeLayout(false);
+            this.ToolStrip.ResumeLayout(false);
+            this.ToolStrip.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -111,6 +161,10 @@
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem CloseAppToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem AboutAppToolStripMenuItem;
+        private System.Windows.Forms.ToolStrip ToolStrip;
+        private System.Windows.Forms.ToolStripButton BackButton;
+        private System.Windows.Forms.ToolStripButton NextButton;
+        private System.Windows.Forms.ToolStripButton RefreshButton;
     }
 }
 

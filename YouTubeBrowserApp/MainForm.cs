@@ -131,8 +131,86 @@ namespace YouTubeBrowserApp
                 return;
             }
 
-            MessageBox.Show(this, @"YouTube Browser App, v1.0
+            MessageBox.Show(this, @"YouTube Browser App, v1.0.1
 (c) 2018 rkttu.com, All rights reserved.", Text, MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+        }
+
+        private void BackButton_Click(object sender, EventArgs e)
+        {
+            if (InvokeRequired)
+            {
+                Invoke(new EventHandler(BackButton_Click), sender, e);
+                return;
+            }
+
+            if (!WebView.CanGoBack)
+                return;
+
+            WebView.GoBack();
+        }
+
+        private void NextButton_Click(object sender, EventArgs e)
+        {
+            if (InvokeRequired)
+            {
+                Invoke(new EventHandler(NextButton_Click), sender, e);
+                return;
+            }
+
+            if (!WebView.CanGoForward)
+                return;
+
+            WebView.GoForward();
+        }
+
+        private void RefreshButton_Click(object sender, EventArgs e)
+        {
+            if (InvokeRequired)
+            {
+                Invoke(new EventHandler(RefreshButton_Click), sender, e);
+                return;
+            }
+
+            var option = WebBrowserRefreshOption.Normal;
+
+            if (Control.ModifierKeys == Keys.Control ||
+                Control.ModifierKeys == Keys.ControlKey ||
+                Control.ModifierKeys == Keys.LControlKey ||
+                Control.ModifierKeys == Keys.RControlKey)
+                option = WebBrowserRefreshOption.Completely;
+
+            WebView.Refresh(option);
+        }
+
+        private void MainForm_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (InvokeRequired)
+            {
+                Invoke(new KeyEventHandler(MainForm_KeyUp), sender, e);
+                return;
+            }
+
+            if (e.KeyCode == Keys.Back ||
+                e.KeyCode == Keys.BrowserBack ||
+                (e.Alt && e.KeyCode == Keys.Left))
+            {
+                BackButton.PerformClick();
+                return;
+            }
+
+            if (e.KeyCode == Keys.BrowserForward ||
+                (e.Alt && e.KeyCode == Keys.Right))
+            {
+                NextButton.PerformClick();
+                return;
+            }
+
+            if (e.KeyCode == Keys.F5 ||
+                e.KeyCode == Keys.BrowserRefresh)
+            {
+                RefreshButton.PerformClick();
+                return;
+            }
         }
     }
 }
