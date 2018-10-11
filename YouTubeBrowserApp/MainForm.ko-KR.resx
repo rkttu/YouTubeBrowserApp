@@ -8112,7 +8112,7 @@
     <value>닫기</value>
   </data>
   <data name="MaximizeButton.Text" xml:space="preserve">
-    <value>최대화</value>
+    <value>최대화/복원</value>
   </data>
   <data name="MinimizeButton.Text" xml:space="preserve">
     <value>최소화</value>

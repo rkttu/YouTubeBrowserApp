@@ -43,8 +43,8 @@
             this.RefreshButton = new System.Windows.Forms.ToolStripButton();
             this.CloseButton = new System.Windows.Forms.ToolStripButton();
             this.MinimizeButton = new System.Windows.Forms.ToolStripButton();
-            this.TitleLabel = new YouTubeBrowserApp.ToolStripSpringLabel();
             this.MaximizeButton = new System.Windows.Forms.ToolStripButton();
+            this.TitleLabel = new YouTubeBrowserApp.ToolStripSpringLabel();
             this.NotifyIconContextMenuStrip.SuspendLayout();
             this.ToolStrip.SuspendLayout();
             this.SuspendLayout();
@@ -142,7 +142,7 @@
             // CloseButton
             // 
             this.CloseButton.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.CloseButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.CloseButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             resources.ApplyResources(this.CloseButton, "CloseButton");
             this.CloseButton.Name = "CloseButton";
             this.CloseButton.Overflow = System.Windows.Forms.ToolStripItemOverflow.Never;
@@ -151,11 +151,20 @@
             // MinimizeButton
             // 
             this.MinimizeButton.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.MinimizeButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.MinimizeButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             resources.ApplyResources(this.MinimizeButton, "MinimizeButton");
             this.MinimizeButton.Name = "MinimizeButton";
             this.MinimizeButton.Overflow = System.Windows.Forms.ToolStripItemOverflow.Never;
             this.MinimizeButton.Click += new System.EventHandler(this.MinimizeButton_Click);
+            // 
+            // MaximizeButton
+            // 
+            this.MaximizeButton.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.MaximizeButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this.MaximizeButton, "MaximizeButton");
+            this.MaximizeButton.Name = "MaximizeButton";
+            this.MaximizeButton.Overflow = System.Windows.Forms.ToolStripItemOverflow.Never;
+            this.MaximizeButton.Click += new System.EventHandler(this.MaximizeButton_Click);
             // 
             // TitleLabel
             // 
@@ -163,15 +172,6 @@
             this.TitleLabel.Overflow = System.Windows.Forms.ToolStripItemOverflow.Never;
             resources.ApplyResources(this.TitleLabel, "TitleLabel");
             this.TitleLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TitleLabel_MouseDown);
-            // 
-            // MaximizeButton
-            // 
-            this.MaximizeButton.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.MaximizeButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            resources.ApplyResources(this.MaximizeButton, "MaximizeButton");
-            this.MaximizeButton.Name = "MaximizeButton";
-            this.MaximizeButton.Overflow = System.Windows.Forms.ToolStripItemOverflow.Never;
-            this.MaximizeButton.Click += new System.EventHandler(this.MaximizeButton_Click);
             // 
             // MainForm
             // 
@@ -186,6 +186,7 @@
             this.KeyPreview = true;
             this.Name = "MainForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.VisibleChanged += new System.EventHandler(this.MainForm_VisibleChanged);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.MainForm_KeyUp);

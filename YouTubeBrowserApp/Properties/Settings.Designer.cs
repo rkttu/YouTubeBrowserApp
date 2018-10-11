@@ -22,5 +22,53 @@ namespace YouTubeBrowserApp.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0, 0")]
+        public global::System.Drawing.Point LastWindowPosition {
+            get {
+                return ((global::System.Drawing.Point)(this["LastWindowPosition"]));
+            }
+            set {
+                this["LastWindowPosition"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0, 0")]
+        public global::System.Drawing.Size LastWindowSize {
+            get {
+                return ((global::System.Drawing.Size)(this["LastWindowSize"]));
+            }
+            set {
+                this["LastWindowSize"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string LastUrl {
+            get {
+                return ((string)(this["LastUrl"]));
+            }
+            set {
+                this["LastUrl"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string LastWindowState {
+            get {
+                return ((string)(this["LastWindowState"]));
+            }
+            set {
+                this["LastWindowState"] = value;
+            }
+        }
     }
 }

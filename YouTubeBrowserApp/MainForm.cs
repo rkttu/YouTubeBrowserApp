@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Windows.Forms;
+using YouTubeBrowserApp.Properties;
 
 namespace YouTubeBrowserApp
 {
@@ -46,13 +47,11 @@ namespace YouTubeBrowserApp
 
             if (WindowState == FormWindowState.Maximized)
             {
-                MaximizeButton.Text = "Maximize";
                 WindowState = FormWindowState.Normal;
                 Show();
             }
             else if (WindowState == FormWindowState.Normal)
             {
-                MaximizeButton.Text = "Restore";
                 WindowState = FormWindowState.Maximized;
                 Show();
             }
@@ -66,10 +65,15 @@ namespace YouTubeBrowserApp
                 return;
             }
 
-            Text = WebView.DocumentTitle;
-            TitleLabel.Text = WebView.DocumentTitle;
-            NotifyIcon.Text = WebView.DocumentTitle;
-            NotifyIcon.BalloonTipTitle = WebView.DocumentTitle;
+            var title = WebView.DocumentTitle;
+
+            if (String.IsNullOrWhiteSpace(title))
+                title = "YouTube Browser App";
+
+            Text = title;
+            TitleLabel.Text = title;
+            NotifyIcon.Text = title;
+            NotifyIcon.BalloonTipTitle = title;
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -80,11 +84,24 @@ namespace YouTubeBrowserApp
                 return;
             }
 
+            if (!Settings.Default.LastWindowSize.IsEmpty)
+                Size = Settings.Default.LastWindowSize;
+
+            if (!Settings.Default.LastWindowPosition.IsEmpty)
+                Location = Settings.Default.LastWindowPosition;
+
+            if (Enum.TryParse(Settings.Default.LastWindowState, out FormWindowState state))
+                WindowState = state;
+
             var firstArgs = Environment.GetCommandLineArgs().ElementAtOrDefault(1);
             var uri = new Uri("https://www.youtube.com/", UriKind.Absolute);
 
             if (!string.IsNullOrWhiteSpace(firstArgs))
                 uri = new Uri($"https://www.youtube.com/watch?v={Uri.EscapeDataString(firstArgs)}", UriKind.Absolute);
+            else if (Uri.TryCreate(Settings.Default.LastUrl, UriKind.Absolute, out Uri lastUri) &&
+                (lastUri.Scheme == Uri.UriSchemeHttp || lastUri.Scheme == Uri.UriSchemeHttps) &&
+                lastUri.Host.EndsWith("youtube.com", StringComparison.OrdinalIgnoreCase))
+                uri = lastUri;
 
             WebView.Navigate(uri);
         }
@@ -246,10 +263,13 @@ namespace YouTubeBrowserApp
 
             if (e.Button == MouseButtons.Left)
             {
-                if ((e.Clicks == 1) && (WindowState != FormWindowState.Maximized))
+                if (e.Clicks == 1)
                 {
-                    NativeMethods.ReleaseCapture();
-                    NativeMethods.SendMessageW(Handle, NativeMethods.WM_NCLBUTTONDOWN, NativeMethods.HT_CAPTION, 0);
+                    if (WindowState != FormWindowState.Maximized)
+                    {
+                        NativeMethods.ReleaseCapture();
+                        NativeMethods.SendMessageW(Handle, NativeMethods.WM_NCLBUTTONDOWN, NativeMethods.HT_CAPTION, 0);
+                    }
                 }
 
                 if (e.Clicks >= 2)
@@ -290,6 +310,21 @@ namespace YouTubeBrowserApp
             }
 
             ToggleWindowMaximizeStatus();
+        }
+
+        private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (InvokeRequired)
+            {
+                Invoke(new FormClosedEventHandler(MainForm_FormClosed), sender, e);
+                return;
+            }
+
+            Settings.Default.LastWindowSize = Size;
+            Settings.Default.LastWindowPosition = Location;
+            Settings.Default.LastWindowState = WindowState.ToString();
+            Settings.Default.LastUrl = WebView.Url.AbsoluteUri;
+            Settings.Default.Save();
         }
     }
 }

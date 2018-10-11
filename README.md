@@ -35,3 +35,16 @@ Currently, this program supports `Korean (Korea)` and `English` as display langu
 ## License
 
 This project follows the MIT license.
+
+## Icons
+
+App Icon: Hand Stitched Social Icons (CC Attribution-Noncommercial-No Derivate 4.0)
+- YouTube Icon: http://www.iconarchive.com/show/hand-stitched-icons-by-designbolts/YouTube-icon.html
+
+Toolbar Icons: Iconsmind (Linkware - http://www.iconsmind.com)
+- Arrow Back 3 Icon: http://www.iconarchive.com/show/outline-icons-by-iconsmind/Arrow-Back-3-icon.html
+- Arrow Forward 2 Icon: http://www.iconarchive.com/show/outline-icons-by-iconsmind/Arrow-Forward-2-icon.html	
+- Restore Window Icon: http://www.iconarchive.com/show/outline-icons-by-iconsmind/Restore-Window-icon.html
+- Maximize Window Icon: http://www.iconarchive.com/show/outline-icons-by-iconsmind/Maximize-Window-icon.html
+- Minimize Window Icon: http://www.iconarchive.com/show/outline-icons-by-iconsmind/Minimize-Window-icon.html
+- Close Window Icon: http://www.iconarchive.com/show/outline-icons-by-iconsmind/Close-Window-icon.html
