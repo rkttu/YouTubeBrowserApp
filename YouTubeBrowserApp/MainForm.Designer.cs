@@ -41,7 +41,10 @@
             this.BackButton = new System.Windows.Forms.ToolStripButton();
             this.NextButton = new System.Windows.Forms.ToolStripButton();
             this.RefreshButton = new System.Windows.Forms.ToolStripButton();
+            this.CloseButton = new System.Windows.Forms.ToolStripButton();
+            this.MinimizeButton = new System.Windows.Forms.ToolStripButton();
             this.TitleLabel = new YouTubeBrowserApp.ToolStripSpringLabel();
+            this.MaximizeButton = new System.Windows.Forms.ToolStripButton();
             this.NotifyIconContextMenuStrip.SuspendLayout();
             this.ToolStrip.SuspendLayout();
             this.SuspendLayout();
@@ -101,8 +104,11 @@
             this.ToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.BackButton,
             this.NextButton,
-            this.RefreshButton,
-            this.TitleLabel});
+            this.TitleLabel,
+            this.CloseButton,
+            this.MinimizeButton,
+            this.MaximizeButton,
+            this.RefreshButton});
             resources.ApplyResources(this.ToolStrip, "ToolStrip");
             this.ToolStrip.Name = "ToolStrip";
             this.ToolStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
@@ -113,6 +119,7 @@
             this.BackButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             resources.ApplyResources(this.BackButton, "BackButton");
             this.BackButton.Name = "BackButton";
+            this.BackButton.Overflow = System.Windows.Forms.ToolStripItemOverflow.Never;
             this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
             // 
             // NextButton
@@ -120,6 +127,7 @@
             this.NextButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             resources.ApplyResources(this.NextButton, "NextButton");
             this.NextButton.Name = "NextButton";
+            this.NextButton.Overflow = System.Windows.Forms.ToolStripItemOverflow.Never;
             this.NextButton.Click += new System.EventHandler(this.NextButton_Click);
             // 
             // RefreshButton
@@ -128,13 +136,42 @@
             this.RefreshButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             resources.ApplyResources(this.RefreshButton, "RefreshButton");
             this.RefreshButton.Name = "RefreshButton";
+            this.RefreshButton.Overflow = System.Windows.Forms.ToolStripItemOverflow.Never;
             this.RefreshButton.Click += new System.EventHandler(this.RefreshButton_Click);
+            // 
+            // CloseButton
+            // 
+            this.CloseButton.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.CloseButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            resources.ApplyResources(this.CloseButton, "CloseButton");
+            this.CloseButton.Name = "CloseButton";
+            this.CloseButton.Overflow = System.Windows.Forms.ToolStripItemOverflow.Never;
+            this.CloseButton.Click += new System.EventHandler(this.CloseButton_Click);
+            // 
+            // MinimizeButton
+            // 
+            this.MinimizeButton.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.MinimizeButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            resources.ApplyResources(this.MinimizeButton, "MinimizeButton");
+            this.MinimizeButton.Name = "MinimizeButton";
+            this.MinimizeButton.Overflow = System.Windows.Forms.ToolStripItemOverflow.Never;
+            this.MinimizeButton.Click += new System.EventHandler(this.MinimizeButton_Click);
             // 
             // TitleLabel
             // 
             this.TitleLabel.Name = "TitleLabel";
+            this.TitleLabel.Overflow = System.Windows.Forms.ToolStripItemOverflow.Never;
             resources.ApplyResources(this.TitleLabel, "TitleLabel");
             this.TitleLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TitleLabel_MouseDown);
+            // 
+            // MaximizeButton
+            // 
+            this.MaximizeButton.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.MaximizeButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            resources.ApplyResources(this.MaximizeButton, "MaximizeButton");
+            this.MaximizeButton.Name = "MaximizeButton";
+            this.MaximizeButton.Overflow = System.Windows.Forms.ToolStripItemOverflow.Never;
+            this.MaximizeButton.Click += new System.EventHandler(this.MaximizeButton_Click);
             // 
             // MainForm
             // 
@@ -175,6 +212,9 @@
         private System.Windows.Forms.ToolStripButton NextButton;
         private System.Windows.Forms.ToolStripButton RefreshButton;
         private ToolStripSpringLabel TitleLabel;
+        private System.Windows.Forms.ToolStripButton CloseButton;
+        private System.Windows.Forms.ToolStripButton MinimizeButton;
+        private System.Windows.Forms.ToolStripButton MaximizeButton;
     }
 }
 

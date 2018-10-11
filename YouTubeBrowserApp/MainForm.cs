@@ -36,6 +36,28 @@ namespace YouTubeBrowserApp
             }
         }
 
+        private void ToggleWindowMaximizeStatus()
+        {
+            if (InvokeRequired)
+            {
+                Invoke(new Action(ToggleWindowMaximizeStatus));
+                return;
+            }
+
+            if (WindowState == FormWindowState.Maximized)
+            {
+                MaximizeButton.Text = "Maximize";
+                WindowState = FormWindowState.Normal;
+                Show();
+            }
+            else if (WindowState == FormWindowState.Normal)
+            {
+                MaximizeButton.Text = "Restore";
+                WindowState = FormWindowState.Maximized;
+                Show();
+            }
+        }
+
         private void WebView_DocumentTitleChanged(object sender, EventArgs e)
         {
             if (InvokeRequired)
@@ -232,18 +254,42 @@ namespace YouTubeBrowserApp
 
                 if (e.Clicks >= 2)
                 {
-                    if (WindowState == FormWindowState.Maximized)
-                    {
-                        WindowState = FormWindowState.Normal;
-                        Show();
-                    }
-                    else if (WindowState == FormWindowState.Normal)
-                    {
-                        WindowState = FormWindowState.Maximized;
-                        Show();
-                    }
+                    ToggleWindowMaximizeStatus();
                 }
             }
+        }
+
+        private void CloseButton_Click(object sender, EventArgs e)
+        {
+            if (InvokeRequired)
+            {
+                Invoke(new EventHandler(CloseButton_Click), sender, e);
+                return;
+            }
+
+            Close();
+        }
+
+        private void MinimizeButton_Click(object sender, EventArgs e)
+        {
+            if (InvokeRequired)
+            {
+                Invoke(new EventHandler(MinimizeButton_Click), sender, e);
+                return;
+            }
+
+            UpdateWindowVisibility(false);
+        }
+
+        private void MaximizeButton_Click(object sender, EventArgs e)
+        {
+            if (InvokeRequired)
+            {
+                Invoke(new EventHandler(MaximizeButton_Click), sender, e);
+                return;
+            }
+
+            ToggleWindowMaximizeStatus();
         }
     }
 }
