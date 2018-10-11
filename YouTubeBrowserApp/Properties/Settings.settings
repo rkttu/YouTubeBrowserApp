@@ -9,10 +9,16 @@
       <Value Profile="(Default)">0, 0</Value>
     </Setting>
     <Setting Name="LastUrl" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">https://www.youtube.com/</Value>
     </Setting>
     <Setting Name="LastWindowState" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">Normal</Value>
+    </Setting>
+    <Setting Name="EnableRememberWindowBound" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="EnableRememberLastUrl" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
     </Setting>
   </Settings>
 </SettingsFile>

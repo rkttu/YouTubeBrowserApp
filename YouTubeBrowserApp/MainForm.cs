@@ -84,21 +84,25 @@ namespace YouTubeBrowserApp
                 return;
             }
 
-            if (!Settings.Default.LastWindowSize.IsEmpty)
-                Size = Settings.Default.LastWindowSize;
+            if (Settings.Default.EnableRememberWindowBound)
+            {
+                if (!Settings.Default.LastWindowSize.IsEmpty)
+                    Size = Settings.Default.LastWindowSize;
 
-            if (!Settings.Default.LastWindowPosition.IsEmpty)
-                Location = Settings.Default.LastWindowPosition;
+                if (!Settings.Default.LastWindowPosition.IsEmpty)
+                    Location = Settings.Default.LastWindowPosition;
 
-            if (Enum.TryParse(Settings.Default.LastWindowState, out FormWindowState state))
-                WindowState = state;
+                if (Enum.TryParse(Settings.Default.LastWindowState, out FormWindowState state))
+                    WindowState = state;
+            }
 
             var firstArgs = Environment.GetCommandLineArgs().ElementAtOrDefault(1);
             var uri = new Uri("https://www.youtube.com/", UriKind.Absolute);
 
             if (!string.IsNullOrWhiteSpace(firstArgs))
                 uri = new Uri($"https://www.youtube.com/watch?v={Uri.EscapeDataString(firstArgs)}", UriKind.Absolute);
-            else if (Uri.TryCreate(Settings.Default.LastUrl, UriKind.Absolute, out Uri lastUri) &&
+            else if (Settings.Default.EnableRememberLastUrl &&
+                Uri.TryCreate(Settings.Default.LastUrl, UriKind.Absolute, out Uri lastUri) &&
                 (lastUri.Scheme == Uri.UriSchemeHttp || lastUri.Scheme == Uri.UriSchemeHttps) &&
                 lastUri.Host.EndsWith("youtube.com", StringComparison.OrdinalIgnoreCase))
                 uri = lastUri;
@@ -320,11 +324,34 @@ namespace YouTubeBrowserApp
                 return;
             }
 
-            Settings.Default.LastWindowSize = Size;
-            Settings.Default.LastWindowPosition = Location;
-            Settings.Default.LastWindowState = WindowState.ToString();
-            Settings.Default.LastUrl = WebView.Url.AbsoluteUri;
+            if (Settings.Default.EnableRememberWindowBound)
+            {
+                Settings.Default.LastWindowSize = Size;
+                Settings.Default.LastWindowPosition = Location;
+                Settings.Default.LastWindowState = WindowState.ToString();
+            }
+
+            if (Settings.Default.EnableRememberLastUrl)
+                Settings.Default.LastUrl = WebView.Url.AbsoluteUri;
+
             Settings.Default.Save();
+        }
+
+        private void SettingsButton_Click(object sender, EventArgs e)
+        {
+            if (InvokeRequired)
+            {
+                Invoke(new EventHandler(SettingsButton_Click), sender, e);
+                return;
+            }
+
+            using (var form = new SettingsForm())
+            {
+                if (form.ShowDialog(this) != DialogResult.OK)
+                    return;
+
+                Settings.Default.Save();
+            }
         }
     }
 }

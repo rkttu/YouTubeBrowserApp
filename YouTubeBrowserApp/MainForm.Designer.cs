@@ -40,11 +40,12 @@
             this.ToolStrip = new System.Windows.Forms.ToolStrip();
             this.BackButton = new System.Windows.Forms.ToolStripButton();
             this.NextButton = new System.Windows.Forms.ToolStripButton();
-            this.RefreshButton = new System.Windows.Forms.ToolStripButton();
             this.CloseButton = new System.Windows.Forms.ToolStripButton();
             this.MinimizeButton = new System.Windows.Forms.ToolStripButton();
             this.MaximizeButton = new System.Windows.Forms.ToolStripButton();
+            this.RefreshButton = new System.Windows.Forms.ToolStripButton();
             this.TitleLabel = new YouTubeBrowserApp.ToolStripSpringLabel();
+            this.SettingsButton = new System.Windows.Forms.ToolStripButton();
             this.NotifyIconContextMenuStrip.SuspendLayout();
             this.ToolStrip.SuspendLayout();
             this.SuspendLayout();
@@ -108,7 +109,8 @@
             this.CloseButton,
             this.MinimizeButton,
             this.MaximizeButton,
-            this.RefreshButton});
+            this.RefreshButton,
+            this.SettingsButton});
             resources.ApplyResources(this.ToolStrip, "ToolStrip");
             this.ToolStrip.Name = "ToolStrip";
             this.ToolStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
@@ -129,15 +131,6 @@
             this.NextButton.Name = "NextButton";
             this.NextButton.Overflow = System.Windows.Forms.ToolStripItemOverflow.Never;
             this.NextButton.Click += new System.EventHandler(this.NextButton_Click);
-            // 
-            // RefreshButton
-            // 
-            this.RefreshButton.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.RefreshButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            resources.ApplyResources(this.RefreshButton, "RefreshButton");
-            this.RefreshButton.Name = "RefreshButton";
-            this.RefreshButton.Overflow = System.Windows.Forms.ToolStripItemOverflow.Never;
-            this.RefreshButton.Click += new System.EventHandler(this.RefreshButton_Click);
             // 
             // CloseButton
             // 
@@ -166,12 +159,30 @@
             this.MaximizeButton.Overflow = System.Windows.Forms.ToolStripItemOverflow.Never;
             this.MaximizeButton.Click += new System.EventHandler(this.MaximizeButton_Click);
             // 
+            // RefreshButton
+            // 
+            this.RefreshButton.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.RefreshButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this.RefreshButton, "RefreshButton");
+            this.RefreshButton.Name = "RefreshButton";
+            this.RefreshButton.Overflow = System.Windows.Forms.ToolStripItemOverflow.Never;
+            this.RefreshButton.Click += new System.EventHandler(this.RefreshButton_Click);
+            // 
             // TitleLabel
             // 
             this.TitleLabel.Name = "TitleLabel";
             this.TitleLabel.Overflow = System.Windows.Forms.ToolStripItemOverflow.Never;
             resources.ApplyResources(this.TitleLabel, "TitleLabel");
             this.TitleLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TitleLabel_MouseDown);
+            // 
+            // SettingsButton
+            // 
+            this.SettingsButton.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.SettingsButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            resources.ApplyResources(this.SettingsButton, "SettingsButton");
+            this.SettingsButton.Name = "SettingsButton";
+            this.SettingsButton.Overflow = System.Windows.Forms.ToolStripItemOverflow.Never;
+            this.SettingsButton.Click += new System.EventHandler(this.SettingsButton_Click);
             // 
             // MainForm
             // 
@@ -216,6 +227,7 @@
         private System.Windows.Forms.ToolStripButton CloseButton;
         private System.Windows.Forms.ToolStripButton MinimizeButton;
         private System.Windows.Forms.ToolStripButton MaximizeButton;
+        private System.Windows.Forms.ToolStripButton SettingsButton;
     }
 }
 

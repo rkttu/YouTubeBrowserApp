@@ -49,7 +49,7 @@ namespace YouTubeBrowserApp.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://www.youtube.com/")]
         public string LastUrl {
             get {
                 return ((string)(this["LastUrl"]));
@@ -61,13 +61,37 @@ namespace YouTubeBrowserApp.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Normal")]
         public string LastWindowState {
             get {
                 return ((string)(this["LastWindowState"]));
             }
             set {
                 this["LastWindowState"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool EnableRememberWindowBound {
+            get {
+                return ((bool)(this["EnableRememberWindowBound"]));
+            }
+            set {
+                this["EnableRememberWindowBound"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool EnableRememberLastUrl {
+            get {
+                return ((bool)(this["EnableRememberLastUrl"]));
+            }
+            set {
+                this["EnableRememberLastUrl"] = value;
             }
         }
     }
