@@ -39,8 +39,9 @@
             this.CloseAppToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStrip = new System.Windows.Forms.ToolStrip();
             this.BackButton = new System.Windows.Forms.ToolStripButton();
-            this.RefreshButton = new System.Windows.Forms.ToolStripButton();
             this.NextButton = new System.Windows.Forms.ToolStripButton();
+            this.RefreshButton = new System.Windows.Forms.ToolStripButton();
+            this.TitleLabel = new YouTubeBrowserApp.ToolStripSpringLabel();
             this.NotifyIconContextMenuStrip.SuspendLayout();
             this.ToolStrip.SuspendLayout();
             this.SuspendLayout();
@@ -100,7 +101,8 @@
             this.ToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.BackButton,
             this.NextButton,
-            this.RefreshButton});
+            this.RefreshButton,
+            this.TitleLabel});
             resources.ApplyResources(this.ToolStrip, "ToolStrip");
             this.ToolStrip.Name = "ToolStrip";
             this.ToolStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
@@ -113,6 +115,13 @@
             this.BackButton.Name = "BackButton";
             this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
             // 
+            // NextButton
+            // 
+            this.NextButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this.NextButton, "NextButton");
+            this.NextButton.Name = "NextButton";
+            this.NextButton.Click += new System.EventHandler(this.NextButton_Click);
+            // 
             // RefreshButton
             // 
             this.RefreshButton.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
@@ -121,12 +130,11 @@
             this.RefreshButton.Name = "RefreshButton";
             this.RefreshButton.Click += new System.EventHandler(this.RefreshButton_Click);
             // 
-            // NextButton
+            // TitleLabel
             // 
-            this.NextButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            resources.ApplyResources(this.NextButton, "NextButton");
-            this.NextButton.Name = "NextButton";
-            this.NextButton.Click += new System.EventHandler(this.NextButton_Click);
+            this.TitleLabel.Name = "TitleLabel";
+            resources.ApplyResources(this.TitleLabel, "TitleLabel");
+            this.TitleLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TitleLabel_MouseDown);
             // 
             // MainForm
             // 
@@ -137,6 +145,7 @@
             this.Controls.Add(this.ToolStrip);
             this.DoubleBuffered = true;
             this.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.KeyPreview = true;
             this.Name = "MainForm";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
@@ -165,6 +174,7 @@
         private System.Windows.Forms.ToolStripButton BackButton;
         private System.Windows.Forms.ToolStripButton NextButton;
         private System.Windows.Forms.ToolStripButton RefreshButton;
+        private ToolStripSpringLabel TitleLabel;
     }
 }
 

@@ -76,8 +76,15 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="NativeMethods.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ToolStripSpringLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ToolStripSpringLabel.Designer.cs">
+      <DependentUpon>ToolStripSpringLabel.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="MainForm.ko-KR.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -94,6 +101,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="ToolStripSpringLabel.resx">
+      <DependentUpon>ToolStripSpringLabel.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="app.config" />
     <None Include="app.manifest">
       <SubType>Designer</SubType>

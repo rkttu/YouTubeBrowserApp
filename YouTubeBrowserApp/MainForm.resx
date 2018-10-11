@@ -129,7 +129,7 @@
     <value>20, 20</value>
   </data>
   <data name="WebView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>624, 409</value>
+    <value>640, 448</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="WebView.TabIndex" type="System.Int32, mscorlib">
@@ -156,6 +156,27 @@
   <metadata name="NotifyIconContextMenuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>126, 17</value>
   </metadata>
+  <data name="RestoreWindowToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>161, 22</value>
+  </data>
+  <data name="RestoreWindowToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Restore Window</value>
+  </data>
+  <data name="toolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>158, 6</value>
+  </data>
+  <data name="AboutAppToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>161, 22</value>
+  </data>
+  <data name="AboutAppToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;About App...</value>
+  </data>
+  <data name="CloseAppToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>161, 22</value>
+  </data>
+  <data name="CloseAppToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Close App</value>
+  </data>
   <data name="NotifyIconContextMenuStrip.Size" type="System.Drawing.Size, System.Drawing">
     <value>162, 76</value>
   </data>
@@ -4148,51 +4169,9 @@
   <data name="NotifyIcon.Visible" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="RestoreWindowToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>161, 22</value>
-  </data>
-  <data name="RestoreWindowToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Restore Window</value>
-  </data>
-  <data name="toolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>158, 6</value>
-  </data>
-  <data name="AboutAppToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>161, 22</value>
-  </data>
-  <data name="AboutAppToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;About App...</value>
-  </data>
-  <data name="CloseAppToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>161, 22</value>
-  </data>
-  <data name="CloseAppToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Close App</value>
-  </data>
   <metadata name="ToolStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>337, 17</value>
   </metadata>
-  <data name="ToolStrip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="ToolStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>624, 32</value>
-  </data>
-  <data name="ToolStrip.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;ToolStrip.Name" xml:space="preserve">
-    <value>ToolStrip</value>
-  </data>
-  <data name="&gt;&gt;ToolStrip.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ToolStrip.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;ToolStrip.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="BackButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -4229,6 +4208,44 @@
   </data>
   <data name="BackButton.Text" xml:space="preserve">
     <value>Back</value>
+  </data>
+  <data name="NextButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAVmSURBVHhe7Z1Z6HVTHIY/80wIfUIoFDIVCkkiSYYLwxcf
+        LgzFBZEQoriQiDLkwhAJhaRMGSND5qHMoRAi8zzneS92nX6tfb7/OXudWmud96nn5px99ums/f7/Z5+1
+        f+u3FxljjDHGGGOMMcYYY4wxxhhjjDHGGGOMMcYYY4wxxjTEZng4LsXdcHk0c8AaeCv+g/+N+B7uh6Zh
+        lsNHcPTAj/oXHoumUQ7D1IEfVSE4Ek2D3Iipgx79Ew9F0xgPYDzYPyUek7/jgWga4iGMB/oMfDY81vkr
+        7oumEVIBOAnXxpdGHhv1Z9wLTQP0BUCsh69jfF7+gJorMJUzLgBiA3wL4zbyW9wZTcUsKwBiMb6PcTv5
+        NW6PplIWEgCxKX6EcVv5BW6DpkIWGgCxBX6CcXv5KW6JpjImCYDYCj/H+Br5MeqCkqmISQMgtsWvML5O
+        foAbo6mEaQIgdsRvML5Wvo0boqmAaQMgdsXvMb5evoGaRzCFMyQAYg/su3bwMq6DpmCGBkDsg79g3I98
+        HtdEUyg5AiAOQF0tjPuST+HqaAokVwDEwfgHxv3JR3FVNIWRMwBCRaWqIIr7lPfjytgcqp49Hp9ETZJo
+        frwWU3+xQ2sAj8G/Me5X3oMrYjMo0fdh6sPW6g44lBMwVhl33o7NlJxfiakPWavPYC5OxX8x9T43oyqS
+        q2Z97DvpqVF9femCT07OxL4QXI9VcxCmPlht6qTtbtwEZ8H5mHpfeRVWy9EYP9CruEtF6vt+LZw1l2Ac
+        q85LsUpSAdCkh0lzOcbx6rwQq8MBmJxrMI6Z1HnC2VgVDsDk6Mz/BozjJhWC07AaHIDp0BzAbRjHTioE
+        J2MVOADTswLehXH8pCaQjsPicQCGsRL2zaJqKvkoLBoHYDir4MMYx1FqRbKWrxeLA5CH1fAJjGMpVWNQ
+        bAgcgHyoTY2uQ8TxlJpuz3GBKjsOQF60IvlFjGMq1cOoOByA/KyLr2EcVy1LKw4HID+6LvECxnH9DIvD
+        AciLCkefxjimUqVrxeEA5EM/B8e1qyvyl4ADkAfVCI4rq9O0cZE4AMPRdYE7MY5jp4JRbBGpAzAMXRlU
+        bWAcw07NEOqroVgcgGFci3H8OlVirxnConEApucyjGPX+RxWsZ7QAZiOizCOW+crWM2KYgdgcs7CvjLx
+        N1Gl9tXgAEzGKdh38N/FjbAq1EI9fpDvUCcwtfg4aoHGnjhLtHayb6nYhzirNQkzRX1yUh+oRvWXeTXO
+        YrmW/lD6Fouq7dzmWC2pK1c1ewHmRD0DVNmTei81mNwaq2Yn7OuRU6Nq9aJLsjnQ/YZ+w9T7aGn6dtgE
+        CkFL/wly3BlE7eTVVj61/2abTOucQN93Syoy1Q7+RByC2sepnXzcr/wRd0dTCLlbxKh2r6+BpL5e9kZT
+        EDkDoI7hX2Lcn9S5wP5oCiNXANRYQmVbcV9SVb36NWAKJEcANInTdy8BNZ84Ak2hDA2Apm81jRv3ITXz
+        57uOFs6QAKgZtC7gxNfLqlb5zjPTBmDcbeV08E9HUwHTBGDcMi55LppKmDQA6vf7GMbXdF6MpiImCYDW
+        86vfb9y+U02gTGUsNADjOnrI69BUyEICoBqBWzBu13kTVt/2dV5ZSABUMRS36bwDm2n8PI8sKwBXYHy+
+        815sqvX7PDIuADqjj891PohN3vxh3ugLwDnhsVHVz8e3f2kEdQmPB1iFmn3l25oA0kSQaQTN2qUOdEpN
+        /WoK2DTEYlxIUavvBNowS7Fv0YZ8B30v4MZRC5Z4W3iFQhNAvv3rnKAz+0PwPFTbdtX4GWOMMcYYY4wx
+        xhhjjDHGGGOMMcYYY4wxxhhjjDHGGGNMMSxa9D/Jq1a6aUnvmgAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="NextButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="NextButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>29, 29</value>
+  </data>
+  <data name="NextButton.Text" xml:space="preserve">
+    <value>Next</value>
   </data>
   <data name="RefreshButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -4465,43 +4482,32 @@
   <data name="RefreshButton.Text" xml:space="preserve">
     <value>Refresh</value>
   </data>
-  <data name="NextButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        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
-</value>
+  <data name="TitleLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>521, 29</value>
   </data>
-  <data name="NextButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
+  <data name="TitleLabel.Text" xml:space="preserve">
+    <value>YouTube Browser App</value>
   </data>
-  <data name="NextButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>29, 29</value>
+  <data name="ToolStrip.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
   </data>
-  <data name="NextButton.Text" xml:space="preserve">
-    <value>Next</value>
+  <data name="ToolStrip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>640, 32</value>
+  </data>
+  <data name="ToolStrip.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;ToolStrip.Name" xml:space="preserve">
+    <value>ToolStrip</value>
+  </data>
+  <data name="&gt;&gt;ToolStrip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ToolStrip.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;ToolStrip.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -4510,7 +4516,7 @@
     <value>96, 96</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>624, 441</value>
+    <value>640, 480</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -8489,6 +8495,9 @@
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAEAAA==
 </value>
   </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>640, 480</value>
   </data>
@@ -8531,17 +8540,23 @@
   <data name="&gt;&gt;BackButton.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;NextButton.Name" xml:space="preserve">
+    <value>NextButton</value>
+  </data>
+  <data name="&gt;&gt;NextButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;RefreshButton.Name" xml:space="preserve">
     <value>RefreshButton</value>
   </data>
   <data name="&gt;&gt;RefreshButton.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;NextButton.Name" xml:space="preserve">
-    <value>NextButton</value>
+  <data name="&gt;&gt;TitleLabel.Name" xml:space="preserve">
+    <value>TitleLabel</value>
   </data>
-  <data name="&gt;&gt;NextButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;TitleLabel.Type" xml:space="preserve">
+    <value>YouTubeBrowserApp.ToolStripSpringLabel, youtube-app, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainForm</value>

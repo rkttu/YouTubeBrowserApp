@@ -45,6 +45,7 @@ namespace YouTubeBrowserApp
             }
 
             Text = WebView.DocumentTitle;
+            TitleLabel.Text = WebView.DocumentTitle;
             NotifyIcon.Text = WebView.DocumentTitle;
             NotifyIcon.BalloonTipTitle = WebView.DocumentTitle;
         }
@@ -210,6 +211,38 @@ namespace YouTubeBrowserApp
             {
                 RefreshButton.PerformClick();
                 return;
+            }
+        }
+
+        private void TitleLabel_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (InvokeRequired)
+            {
+                Invoke(new MouseEventHandler(TitleLabel_MouseDown), sender, e);
+                return;
+            }
+
+            if (e.Button == MouseButtons.Left)
+            {
+                if ((e.Clicks == 1) && (WindowState != FormWindowState.Maximized))
+                {
+                    NativeMethods.ReleaseCapture();
+                    NativeMethods.SendMessageW(Handle, NativeMethods.WM_NCLBUTTONDOWN, NativeMethods.HT_CAPTION, 0);
+                }
+
+                if (e.Clicks >= 2)
+                {
+                    if (WindowState == FormWindowState.Maximized)
+                    {
+                        WindowState = FormWindowState.Normal;
+                        Show();
+                    }
+                    else if (WindowState == FormWindowState.Normal)
+                    {
+                        WindowState = FormWindowState.Maximized;
+                        Show();
+                    }
+                }
             }
         }
     }
