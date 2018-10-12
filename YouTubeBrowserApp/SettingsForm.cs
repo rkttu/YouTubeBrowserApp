@@ -21,18 +21,18 @@ namespace YouTubeBrowserApp
         }
 
         public bool RememberWindowBound {
-            get => RememberWindowBoundCheckBox.Checked;
-            set => RememberWindowBoundCheckBox.Checked = value;
+            get { return RememberWindowBoundCheckBox.Checked; }
+            set { RememberWindowBoundCheckBox.Checked = value; }
         }
 
         public bool RememberLastPage {
-            get => RememberLastPageCheckBox.Checked;
-            set => RememberLastPageCheckBox.Checked = value;
+            get { return RememberLastPageCheckBox.Checked; }
+            set { RememberLastPageCheckBox.Checked = value; }
         }
 
         public bool AlwaysOnTop {
-            get => AlwaysOnTopCheckBox.Checked;
-            set => AlwaysOnTopCheckBox.Checked = value;
+            get { return AlwaysOnTopCheckBox.Checked; }
+            set { AlwaysOnTopCheckBox.Checked = value; }
         }
 
         private void AboutButton_Click(object sender, EventArgs e)
