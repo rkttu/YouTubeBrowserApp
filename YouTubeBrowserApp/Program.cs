@@ -14,19 +14,22 @@ namespace YouTubeBrowserApp
         [STAThread]
         private static void Main()
         {
-            UpdateWebBrowserVersion();
-
-            Application.OleRequired();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            Application.OleRequired();
+
+            NativeMethods.SetProcessDpiAwareness(NativeMethods.PROCESS_DPI_AWARENESS.PROCESS_PER_MONITOR_DPI_AWARE);
+
+            SetWebViewFeature("FEATURE_BROWSER_EMULATION", 11000);
+            SetWebViewFeature("FEATURE_96DPI_PIXEL", 1);
 
             var controller = new ApplicationController<MainForm>();
             controller.Run(Environment.GetCommandLineArgs());
         }
 
-        private static void UpdateWebBrowserVersion()
+        private static void SetWebViewFeature(string featureName, object value)
         {
-            var targetPath = @"SOFTWARE\Microsoft\Internet Explorer\Main\FeatureControl\FEATURE_BROWSER_EMULATION";
+            var targetPath = $@"SOFTWARE\Microsoft\Internet Explorer\Main\FeatureControl\{featureName}";
             var execFileName = Path.GetFileName(Process.GetCurrentProcess().MainModule.FileName);
             var subKey = Registry.CurrentUser.OpenSubKey(targetPath, true);
 
@@ -35,7 +38,7 @@ namespace YouTubeBrowserApp
 
             using (subKey)
             {
-                subKey.SetValue(execFileName, 11000);
+                subKey.SetValue(execFileName, value);
             }
         }
     }

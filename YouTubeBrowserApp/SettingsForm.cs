@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 using YouTubeBrowserApp.Properties;
 
@@ -18,6 +19,8 @@ namespace YouTubeBrowserApp
                 Invoke(new EventHandler(SettingsForm_Load), sender, e);
                 return;
             }
+
+            Font = SystemFonts.MessageBoxFont;
         }
 
         public bool RememberWindowBound {

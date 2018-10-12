@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using YouTubeBrowserApp.Properties;
@@ -12,6 +13,22 @@ namespace YouTubeBrowserApp
             InitializeComponent();
 
             WebView.DocumentTitleChanged += WebView_DocumentTitleChanged;
+
+            // Adjust Tool Strip Size in High DPI mode - https://www.medo64.com/2014/01/scaling-toolstrip-with-dpi/
+            Font = SystemFonts.MessageBoxFont;
+            using (var graphics = CreateGraphics())
+            {
+                var scale = Math.Max(graphics.DpiX, graphics.DpiY) / 96d;
+                var newScale = (int)Math.Floor(scale * 100) / 50 * 50 / 100d;
+
+                if (newScale > 1)
+                {
+                    var newWidth = (int)(ToolStrip.ImageScalingSize.Width * newScale);
+                    var newHeight = (int)(ToolStrip.ImageScalingSize.Height * newScale);
+                    ToolStrip.ImageScalingSize = new Size(newWidth, newHeight);
+                    ToolStrip.AutoSize = false;
+                }
+            }
         }
 
         protected override CreateParams CreateParams
