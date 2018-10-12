@@ -25,5 +25,20 @@ namespace YouTubeBrowserApp
                 return;
             }
         }
+
+        public bool RememberWindowBound {
+            get => RememberWindowBoundCheckBox.Checked;
+            set => RememberWindowBoundCheckBox.Checked = value;
+        }
+
+        public bool RememberLastPage {
+            get => RememberLastPageCheckBox.Checked;
+            set => RememberLastPageCheckBox.Checked = value;
+        }
+
+        public bool AlwaysOnTop {
+            get => AlwaysOnTopCheckBox.Checked;
+            set => AlwaysOnTopCheckBox.Checked = value;
+        }
     }
 }

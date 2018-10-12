@@ -29,49 +29,64 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SettingsForm));
-            this.RememberWindowBound = new System.Windows.Forms.CheckBox();
-            this.RememberLastPage = new System.Windows.Forms.CheckBox();
+            this.RememberWindowBoundCheckBox = new System.Windows.Forms.CheckBox();
+            this.RememberLastPageCheckBox = new System.Windows.Forms.CheckBox();
+            this.DialogCancelButton = new System.Windows.Forms.Button();
+            this.DialogOkayButton = new System.Windows.Forms.Button();
+            this.AlwaysOnTopCheckBox = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
-            // RememberWindowBound
+            // RememberWindowBoundCheckBox
             // 
-            this.RememberWindowBound.AutoSize = true;
-            this.RememberWindowBound.Location = new System.Drawing.Point(13, 13);
-            this.RememberWindowBound.Name = "RememberWindowBound";
-            this.RememberWindowBound.Size = new System.Drawing.Size(319, 16);
-            this.RememberWindowBound.TabIndex = 0;
-            this.RememberWindowBound.Text = "Remember window bound (location, size and state)";
-            this.RememberWindowBound.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.RememberWindowBoundCheckBox, "RememberWindowBoundCheckBox");
+            this.RememberWindowBoundCheckBox.Name = "RememberWindowBoundCheckBox";
+            this.RememberWindowBoundCheckBox.UseVisualStyleBackColor = true;
             // 
-            // RememberLastPage
+            // RememberLastPageCheckBox
             // 
-            this.RememberLastPage.AutoSize = true;
-            this.RememberLastPage.Location = new System.Drawing.Point(13, 44);
-            this.RememberLastPage.Name = "RememberLastPage";
-            this.RememberLastPage.Size = new System.Drawing.Size(186, 16);
-            this.RememberLastPage.TabIndex = 1;
-            this.RememberLastPage.Text = "Remember last viewed page";
-            this.RememberLastPage.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.RememberLastPageCheckBox, "RememberLastPageCheckBox");
+            this.RememberLastPageCheckBox.Name = "RememberLastPageCheckBox";
+            this.RememberLastPageCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // DialogCancelButton
+            // 
+            resources.ApplyResources(this.DialogCancelButton, "DialogCancelButton");
+            this.DialogCancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.DialogCancelButton.Name = "DialogCancelButton";
+            this.DialogCancelButton.UseVisualStyleBackColor = true;
+            // 
+            // DialogOkayButton
+            // 
+            resources.ApplyResources(this.DialogOkayButton, "DialogOkayButton");
+            this.DialogOkayButton.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.DialogOkayButton.Name = "DialogOkayButton";
+            this.DialogOkayButton.UseVisualStyleBackColor = true;
+            // 
+            // AlwaysOnTopCheckBox
+            // 
+            resources.ApplyResources(this.AlwaysOnTopCheckBox, "AlwaysOnTopCheckBox");
+            this.AlwaysOnTopCheckBox.Name = "AlwaysOnTopCheckBox";
+            this.AlwaysOnTopCheckBox.UseVisualStyleBackColor = true;
             // 
             // SettingsForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AcceptButton = this.DialogOkayButton;
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(464, 81);
-            this.Controls.Add(this.RememberLastPage);
-            this.Controls.Add(this.RememberWindowBound);
+            this.CancelButton = this.DialogCancelButton;
+            this.Controls.Add(this.DialogOkayButton);
+            this.Controls.Add(this.DialogCancelButton);
+            this.Controls.Add(this.AlwaysOnTopCheckBox);
+            this.Controls.Add(this.RememberLastPageCheckBox);
+            this.Controls.Add(this.RememberWindowBoundCheckBox);
             this.DoubleBuffered = true;
             this.ForeColor = System.Drawing.SystemColors.WindowText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(480, 120);
             this.Name = "SettingsForm";
             this.ShowInTaskbar = false;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Settings";
             this.Load += new System.EventHandler(this.SettingsForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -80,7 +95,10 @@
 
         #endregion
 
-        private System.Windows.Forms.CheckBox RememberWindowBound;
-        private System.Windows.Forms.CheckBox RememberLastPage;
+        private System.Windows.Forms.CheckBox RememberWindowBoundCheckBox;
+        private System.Windows.Forms.CheckBox RememberLastPageCheckBox;
+        private System.Windows.Forms.Button DialogCancelButton;
+        private System.Windows.Forms.Button DialogOkayButton;
+        private System.Windows.Forms.CheckBox AlwaysOnTopCheckBox;
     }
 }

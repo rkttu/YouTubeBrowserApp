@@ -57,6 +57,20 @@ namespace YouTubeBrowserApp
             }
         }
 
+        private void SetAlwaysOnTop(bool topmost)
+        {
+            if (InvokeRequired)
+            {
+                Invoke(new Action<bool>(SetAlwaysOnTop), topmost);
+                return;
+            }
+
+            TopMost = topmost;
+            Settings.Default.AlwaysOnTop = TopMost;
+            AlwaysOntopToolStripMenuItem.Checked = TopMost;
+            Settings.Default.Save();
+        }
+
         private void WebView_DocumentTitleChanged(object sender, EventArgs e)
         {
             if (InvokeRequired)
@@ -83,6 +97,8 @@ namespace YouTubeBrowserApp
                 Invoke(new EventHandler(MainForm_Load), sender, e);
                 return;
             }
+
+            SetAlwaysOnTop(Settings.Default.AlwaysOnTop);
 
             if (Settings.Default.EnableRememberWindowBound)
             {
@@ -345,13 +361,33 @@ namespace YouTubeBrowserApp
                 return;
             }
 
-            using (var form = new SettingsForm())
+            using (var form = new SettingsForm()
+            {
+                RememberWindowBound = Settings.Default.EnableRememberWindowBound,
+                RememberLastPage = Settings.Default.EnableRememberLastUrl,
+                AlwaysOnTop = Settings.Default.AlwaysOnTop,
+            })
             {
                 if (form.ShowDialog(this) != DialogResult.OK)
                     return;
 
+                Settings.Default.EnableRememberWindowBound = form.RememberWindowBound;
+                Settings.Default.EnableRememberLastUrl = form.RememberLastPage;
                 Settings.Default.Save();
+
+                SetAlwaysOnTop(form.AlwaysOnTop);
             }
+        }
+
+        private void AlwaysOntopToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (InvokeRequired)
+            {
+                Invoke(new EventHandler(AlwaysOntopToolStripMenuItem_Click), sender, e);
+                return;
+            }
+
+            SetAlwaysOnTop(!TopMost);
         }
     }
 }

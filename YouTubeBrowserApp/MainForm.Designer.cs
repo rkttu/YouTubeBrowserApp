@@ -34,6 +34,7 @@
             this.NotifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
             this.NotifyIconContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.RestoreWindowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.AlwaysOntopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.AboutAppToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.CloseAppToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -44,8 +45,8 @@
             this.MinimizeButton = new System.Windows.Forms.ToolStripButton();
             this.MaximizeButton = new System.Windows.Forms.ToolStripButton();
             this.RefreshButton = new System.Windows.Forms.ToolStripButton();
-            this.TitleLabel = new YouTubeBrowserApp.ToolStripSpringLabel();
             this.SettingsButton = new System.Windows.Forms.ToolStripButton();
+            this.TitleLabel = new YouTubeBrowserApp.ToolStripSpringLabel();
             this.NotifyIconContextMenuStrip.SuspendLayout();
             this.ToolStrip.SuspendLayout();
             this.SuspendLayout();
@@ -68,6 +69,7 @@
             // 
             this.NotifyIconContextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.RestoreWindowToolStripMenuItem,
+            this.AlwaysOntopToolStripMenuItem,
             this.toolStripMenuItem1,
             this.AboutAppToolStripMenuItem,
             this.CloseAppToolStripMenuItem});
@@ -79,6 +81,12 @@
             this.RestoreWindowToolStripMenuItem.Name = "RestoreWindowToolStripMenuItem";
             resources.ApplyResources(this.RestoreWindowToolStripMenuItem, "RestoreWindowToolStripMenuItem");
             this.RestoreWindowToolStripMenuItem.Click += new System.EventHandler(this.RestoreWindowToolStripMenuItem_Click);
+            // 
+            // AlwaysOntopToolStripMenuItem
+            // 
+            this.AlwaysOntopToolStripMenuItem.Name = "AlwaysOntopToolStripMenuItem";
+            resources.ApplyResources(this.AlwaysOntopToolStripMenuItem, "AlwaysOntopToolStripMenuItem");
+            this.AlwaysOntopToolStripMenuItem.Click += new System.EventHandler(this.AlwaysOntopToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
@@ -168,21 +176,21 @@
             this.RefreshButton.Overflow = System.Windows.Forms.ToolStripItemOverflow.Never;
             this.RefreshButton.Click += new System.EventHandler(this.RefreshButton_Click);
             // 
+            // SettingsButton
+            // 
+            this.SettingsButton.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.SettingsButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this.SettingsButton, "SettingsButton");
+            this.SettingsButton.Name = "SettingsButton";
+            this.SettingsButton.Overflow = System.Windows.Forms.ToolStripItemOverflow.Never;
+            this.SettingsButton.Click += new System.EventHandler(this.SettingsButton_Click);
+            // 
             // TitleLabel
             // 
             this.TitleLabel.Name = "TitleLabel";
             this.TitleLabel.Overflow = System.Windows.Forms.ToolStripItemOverflow.Never;
             resources.ApplyResources(this.TitleLabel, "TitleLabel");
             this.TitleLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TitleLabel_MouseDown);
-            // 
-            // SettingsButton
-            // 
-            this.SettingsButton.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.SettingsButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            resources.ApplyResources(this.SettingsButton, "SettingsButton");
-            this.SettingsButton.Name = "SettingsButton";
-            this.SettingsButton.Overflow = System.Windows.Forms.ToolStripItemOverflow.Never;
-            this.SettingsButton.Click += new System.EventHandler(this.SettingsButton_Click);
             // 
             // MainForm
             // 
@@ -228,6 +236,7 @@
         private System.Windows.Forms.ToolStripButton MinimizeButton;
         private System.Windows.Forms.ToolStripButton MaximizeButton;
         private System.Windows.Forms.ToolStripButton SettingsButton;
+        private System.Windows.Forms.ToolStripMenuItem AlwaysOntopToolStripMenuItem;
     }
 }
 
