@@ -82,7 +82,7 @@ namespace YouTubeBrowserApp
             var title = WebView.DocumentTitle;
 
             if (String.IsNullOrWhiteSpace(title))
-                title = "YouTube Browser App";
+                title = Resources.AppTitle;
 
             Text = title;
             TitleLabel.Text = title;
@@ -191,8 +191,8 @@ namespace YouTubeBrowserApp
                 return;
             }
 
-            MessageBox.Show(this, @"YouTube Browser App, v1.0.1
-(c) 2018 rkttu.com, All rights reserved.", Text, MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+            MessageBox.Show(this, Resources.AboutDialogText, Text,
+                MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
         }
 
         private void BackButton_Click(object sender, EventArgs e)

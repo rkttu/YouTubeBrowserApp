@@ -41,12 +41,12 @@
             this.ToolStrip = new System.Windows.Forms.ToolStrip();
             this.BackButton = new System.Windows.Forms.ToolStripButton();
             this.NextButton = new System.Windows.Forms.ToolStripButton();
+            this.TitleLabel = new YouTubeBrowserApp.ToolStripSpringLabel();
             this.CloseButton = new System.Windows.Forms.ToolStripButton();
             this.MinimizeButton = new System.Windows.Forms.ToolStripButton();
             this.MaximizeButton = new System.Windows.Forms.ToolStripButton();
             this.RefreshButton = new System.Windows.Forms.ToolStripButton();
             this.SettingsButton = new System.Windows.Forms.ToolStripButton();
-            this.TitleLabel = new YouTubeBrowserApp.ToolStripSpringLabel();
             this.NotifyIconContextMenuStrip.SuspendLayout();
             this.ToolStrip.SuspendLayout();
             this.SuspendLayout();
@@ -58,6 +58,7 @@
             this.WebView.IsWebBrowserContextMenuEnabled = false;
             this.WebView.Name = "WebView";
             this.WebView.ScriptErrorsSuppressed = true;
+            this.WebView.Url = new System.Uri("https://www.youtube.com/", System.UriKind.Absolute);
             // 
             // NotifyIcon
             // 
@@ -140,6 +141,13 @@
             this.NextButton.Overflow = System.Windows.Forms.ToolStripItemOverflow.Never;
             this.NextButton.Click += new System.EventHandler(this.NextButton_Click);
             // 
+            // TitleLabel
+            // 
+            this.TitleLabel.Name = "TitleLabel";
+            this.TitleLabel.Overflow = System.Windows.Forms.ToolStripItemOverflow.Never;
+            resources.ApplyResources(this.TitleLabel, "TitleLabel");
+            this.TitleLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TitleLabel_MouseDown);
+            // 
             // CloseButton
             // 
             this.CloseButton.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
@@ -184,13 +192,6 @@
             this.SettingsButton.Name = "SettingsButton";
             this.SettingsButton.Overflow = System.Windows.Forms.ToolStripItemOverflow.Never;
             this.SettingsButton.Click += new System.EventHandler(this.SettingsButton_Click);
-            // 
-            // TitleLabel
-            // 
-            this.TitleLabel.Name = "TitleLabel";
-            this.TitleLabel.Overflow = System.Windows.Forms.ToolStripItemOverflow.Never;
-            resources.ApplyResources(this.TitleLabel, "TitleLabel");
-            this.TitleLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TitleLabel_MouseDown);
             // 
             // MainForm
             // 

@@ -59,5 +59,24 @@ namespace YouTubeBrowserApp.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   YouTube Browser App
+        ///(c) 2018 rkttu.com, All rights reserved.과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        internal static string AboutDialogText {
+            get {
+                return ResourceManager.GetString("AboutDialogText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   YouTube Browser App과(와) 유사한 지역화된 문자열을 찾습니다.
+        /// </summary>
+        internal static string AppTitle {
+            get {
+                return ResourceManager.GetString("AppTitle", resourceCulture);
+            }
+        }
     }
 }
