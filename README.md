@@ -4,17 +4,25 @@
 
 ![Image of YouTube Browser App](screenshot.png)
 
-**[Download v1.0 Release](https://github.com/rkttu/YouTubeBrowserApp/releases/tag/1.0)**
+**[Download v1.1 Release](https://github.com/rkttu/YouTubeBrowserApp/releases/tag/1.1)**
 
 This app is a separate app that only plays YouTube videos, regardless of the behavior of your web browser. It helps you to watch both your web browser and YouTube video at the same time.
 
 This app is inspired by DeskApp for YouTube (https://itunes.apple.com/us/app/deskapp-for-youtube/id1180531112).
 
+## New Features (v1.1)
+
+* I decorated the window border and title bar a bit more.
+* A new setting window has been added, and the following functions can be turned on and off.
+** Remember last window position, size, and state.
+** Show the last video you saw.
+** You can pin the window to always stay on top.
+
 ## What you need to run the program
 
 * In Windows 8 or later, you can run it immediately without installing the program separately. (Windows 10 is recommended.)
-* On Windows 7 and below, the .NET Framework 4.0 Client Profile is required. And Internet Explorer 11 is required.
-* This app does not support offline mode, so you need to have an internet connection.
+* On Windows 7 and below, the [.NET Framework 4.0 Client Profile](https://www.microsoft.com/en-us/download/details.aspx?id=17113) is required. And [Internet Explorer 11](https://www.microsoft.com/en-us/download/Internet-Explorer-11-for-Windows-7-details.aspx) is required.
+* This app does not support offline mode, so you should have an internet connection.
 
 ## How to use
 
