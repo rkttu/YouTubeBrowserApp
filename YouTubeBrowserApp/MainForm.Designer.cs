@@ -116,8 +116,8 @@
             this.NextButton,
             this.TitleLabel,
             this.CloseButton,
-            this.MinimizeButton,
             this.MaximizeButton,
+            this.MinimizeButton,
             this.RefreshButton,
             this.SettingsButton});
             resources.ApplyResources(this.ToolStrip, "ToolStrip");

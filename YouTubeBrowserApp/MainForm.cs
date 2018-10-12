@@ -300,7 +300,7 @@ namespace YouTubeBrowserApp
                     if (WindowState != FormWindowState.Maximized)
                     {
                         NativeMethods.ReleaseCapture();
-                        NativeMethods.SendMessageW(Handle, NativeMethods.WM_NCLBUTTONDOWN, NativeMethods.HT_CAPTION, 0);
+                        NativeMethods.SendMessage(Handle, NativeMethods.WM_NCLBUTTONDOWN, NativeMethods.HT_CAPTION, 0);
                     }
                 }
 

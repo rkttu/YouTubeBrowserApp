@@ -4122,4 +4122,7 @@
   <data name="$this.Text" xml:space="preserve">
     <value>설정</value>
   </data>
+  <data name="AboutButton.Text" xml:space="preserve">
+    <value>정보</value>
+  </data>
 </root>

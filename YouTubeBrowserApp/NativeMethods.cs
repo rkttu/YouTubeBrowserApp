@@ -11,7 +11,7 @@ namespace YouTubeBrowserApp
         public const int WS_MINIMIZEBOX = 0x00020000;
 
         [DllImport("user32.dll", CallingConvention = CallingConvention.Winapi, ExactSpelling = true, CharSet = CharSet.Unicode, EntryPoint = "SendMessageW")]
-        public static extern int SendMessageW(IntPtr handle, int message, int wordParameter, int longParameter);
+        public static extern int SendMessage(IntPtr handle, int message, int wordParameter, int longParameter);
 
         [DllImport("user32.dll", CallingConvention = CallingConvention.Winapi, ExactSpelling = true, CharSet = CharSet.None, EntryPoint = "ReleaseCapture")]
         public static extern bool ReleaseCapture();
