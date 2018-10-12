@@ -1,10 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using YouTubeBrowserApp.Properties;
 
@@ -39,6 +33,18 @@ namespace YouTubeBrowserApp
         public bool AlwaysOnTop {
             get => AlwaysOnTopCheckBox.Checked;
             set => AlwaysOnTopCheckBox.Checked = value;
+        }
+
+        private void AboutButton_Click(object sender, EventArgs e)
+        {
+            if (InvokeRequired)
+            {
+                Invoke(new EventHandler(AboutButton_Click), sender, e);
+                return;
+            }
+
+            MessageBox.Show(this, Resources.AboutDialogText, Text,
+                MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
         }
     }
 }

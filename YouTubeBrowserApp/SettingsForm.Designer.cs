@@ -34,6 +34,7 @@
             this.DialogCancelButton = new System.Windows.Forms.Button();
             this.DialogOkayButton = new System.Windows.Forms.Button();
             this.AlwaysOnTopCheckBox = new System.Windows.Forms.CheckBox();
+            this.AboutButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // RememberWindowBoundCheckBox
@@ -68,6 +69,13 @@
             this.AlwaysOnTopCheckBox.Name = "AlwaysOnTopCheckBox";
             this.AlwaysOnTopCheckBox.UseVisualStyleBackColor = true;
             // 
+            // AboutButton
+            // 
+            resources.ApplyResources(this.AboutButton, "AboutButton");
+            this.AboutButton.Name = "AboutButton";
+            this.AboutButton.UseVisualStyleBackColor = true;
+            this.AboutButton.Click += new System.EventHandler(this.AboutButton_Click);
+            // 
             // SettingsForm
             // 
             this.AcceptButton = this.DialogOkayButton;
@@ -75,6 +83,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.CancelButton = this.DialogCancelButton;
+            this.Controls.Add(this.AboutButton);
             this.Controls.Add(this.DialogOkayButton);
             this.Controls.Add(this.DialogCancelButton);
             this.Controls.Add(this.AlwaysOnTopCheckBox);
@@ -100,5 +109,6 @@
         private System.Windows.Forms.Button DialogCancelButton;
         private System.Windows.Forms.Button DialogOkayButton;
         private System.Windows.Forms.CheckBox AlwaysOnTopCheckBox;
+        private System.Windows.Forms.Button AboutButton;
     }
 }
