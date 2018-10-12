@@ -118,17 +118,19 @@ namespace YouTubeBrowserApp
                 if (!Settings.Default.LastWindowPosition.IsEmpty)
                     Location = Settings.Default.LastWindowPosition;
 
-                if (Enum.TryParse(Settings.Default.LastWindowState, out FormWindowState state))
+                FormWindowState state;
+                if (Enum.TryParse(Settings.Default.LastWindowState, out state))
                     WindowState = state;
             }
 
             var firstArgs = Environment.GetCommandLineArgs().ElementAtOrDefault(1);
             var uri = new Uri("https://www.youtube.com/", UriKind.Absolute);
+            var lastUri = default(Uri);
 
             if (!string.IsNullOrWhiteSpace(firstArgs))
                 uri = new Uri($"https://www.youtube.com/watch?v={Uri.EscapeDataString(firstArgs)}", UriKind.Absolute);
             else if (Settings.Default.EnableRememberLastUrl &&
-                Uri.TryCreate(Settings.Default.LastUrl, UriKind.Absolute, out Uri lastUri) &&
+                Uri.TryCreate(Settings.Default.LastUrl, UriKind.Absolute, out lastUri) &&
                 (lastUri.Scheme == Uri.UriSchemeHttp || lastUri.Scheme == Uri.UriSchemeHttps) &&
                 lastUri.Host.EndsWith("youtube.com", StringComparison.OrdinalIgnoreCase))
                 uri = lastUri;
