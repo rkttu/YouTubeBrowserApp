@@ -14,6 +14,16 @@ namespace YouTubeBrowserApp
             WebView.DocumentTitleChanged += WebView_DocumentTitleChanged;
         }
 
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams cp = base.CreateParams;
+                cp.ClassStyle |= NativeMethods.CS_DROPSHADOW;
+                return cp;
+            }
+        }
+
         private void UpdateWindowVisibility(bool visible)
         {
             if (InvokeRequired)
