@@ -14,9 +14,9 @@ This app is inspired by DeskApp for YouTube (https://itunes.apple.com/us/app/des
 
 * I decorated the window border and title bar a bit more.
 * A new setting window has been added, and the following functions can be turned on and off.
-** Remember last window position, size, and state.
-** Show the last video you saw.
-** You can pin the window to always stay on top.
+  * Remember last window position, size, and state.
+  * Show the last video you saw.
+  * You can pin the window to always stay on top.
 
 ## What you need to run the program
 
