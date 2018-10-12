@@ -8123,7 +8123,7 @@
   <data name="SettingsButton.Text" xml:space="preserve">
     <value>설정</value>
   </data>
-  <data name="SettingsButton.ToolTipText" xml:space="preserve">
-    <value>설정</value>
+  <data name="$this.Text" xml:space="preserve">
+    <value>YouTube Browser App</value>
   </data>
 </root>
