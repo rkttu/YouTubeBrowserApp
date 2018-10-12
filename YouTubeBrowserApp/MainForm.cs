@@ -19,7 +19,7 @@ namespace YouTubeBrowserApp
             get
             {
                 CreateParams cp = base.CreateParams;
-                cp.ClassStyle |= NativeMethods.CS_DROPSHADOW;
+                cp.Style |= NativeMethods.WS_SIZEBOX | NativeMethods.WS_MINIMIZEBOX;
                 return cp;
             }
         }
