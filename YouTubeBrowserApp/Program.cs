@@ -23,8 +23,11 @@ namespace YouTubeBrowserApp
             SetWebViewFeature("FEATURE_BROWSER_EMULATION", 11000);
             SetWebViewFeature("FEATURE_96DPI_PIXEL", 1);
 
-            var controller = new ApplicationController<MainForm>();
-            controller.Run(Environment.GetCommandLineArgs());
+            using (var mainForm = new MainForm())
+            {
+                var appContext = new ApplicationContext(mainForm);
+                Application.Run(appContext);
+            }
         }
 
         private static void SetWebViewFeature(string featureName, object value)

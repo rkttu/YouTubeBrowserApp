@@ -113,7 +113,7 @@ namespace YouTubeBrowserApp
 
             Text = title;
             TitleLabel.Text = title;
-            NotifyIcon.Text = title;
+            NotifyIcon.Text = title.Substring(0, Math.Min(title.Length, 63));
             NotifyIcon.BalloonTipTitle = title;
         }
 
