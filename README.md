@@ -10,19 +10,14 @@ This app is a separate app that only plays YouTube videos, regardless of the beh
 
 This app is inspired by DeskApp for YouTube (https://itunes.apple.com/us/app/deskapp-for-youtube/id1180531112).
 
-## New Features (v1.1.2)
+## New Features (v1.1.3)
 
-* I decorated the window border and title bar a bit more.
-* A new setting window has been added, and the following functions can be turned on and off.
-  * Remember last window position, size, and state.
-  * Show the last video you saw.
-  * You can pin the window to always stay on top.
-* Improve High DPI support.
+* Updated to use WebView2 based on Microsoft Edge.
 
 ## What you need to run the program
 
-* In Windows 8 or later, you can run it immediately without installing the program separately. (Windows 10 is recommended.)
-* On Windows 7 and below, the [.NET Framework 4.0 Client Profile](https://www.microsoft.com/en-us/download/details.aspx?id=17113) is required. And [Internet Explorer 11](https://www.microsoft.com/en-us/download/Internet-Explorer-11-for-Windows-7-details.aspx) is required.
+* In Windows 10 or later, you can run it immediately without installing the program separately. (Windows 10 is recommended.)
+* On Windows 10 and below, the [.NET Framework 4.8](https://dotnet.microsoft.com/en-us/download/dotnet-framework/net48) is required. And [Microsofte Edge WebView2 Runtime](https://developer.microsoft.com/en-us/microsoft-edge/webview2/) is required.
 * This app does not support offline mode, so you should have an internet connection.
 
 ## How to use

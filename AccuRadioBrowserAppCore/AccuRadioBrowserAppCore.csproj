@@ -1,8 +1,8 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <TargetFramework>net6.0-windows</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
     <RootNamespace>AccuRadioBrowserApp</RootNamespace>
     <StartupObject>AccuRadioBrowserApp.Program</StartupObject>
@@ -14,5 +14,9 @@
     <Description>This assembly contains simple AccuRadio browser application.</Description>
     <SignAssembly>false</SignAssembly>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="microsoft.web.webview2" Version="1.0.1185.39" />
+  </ItemGroup>
 
 </Project>

@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            this.WebView = new System.Windows.Forms.WebBrowser();
             this.NotifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
             this.NotifyIconContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.RestoreWindowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -43,22 +42,15 @@
             this.NextButton = new System.Windows.Forms.ToolStripButton();
             this.TitleLabel = new AccuRadioBrowserApp.ToolStripSpringLabel();
             this.CloseButton = new System.Windows.Forms.ToolStripButton();
-            this.MinimizeButton = new System.Windows.Forms.ToolStripButton();
             this.MaximizeButton = new System.Windows.Forms.ToolStripButton();
+            this.MinimizeButton = new System.Windows.Forms.ToolStripButton();
             this.RefreshButton = new System.Windows.Forms.ToolStripButton();
             this.SettingsButton = new System.Windows.Forms.ToolStripButton();
+            this.WebView = new Microsoft.Web.WebView2.WinForms.WebView2();
             this.NotifyIconContextMenuStrip.SuspendLayout();
             this.ToolStrip.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.WebView)).BeginInit();
             this.SuspendLayout();
-            // 
-            // WebView
-            // 
-            this.WebView.AllowWebBrowserDrop = false;
-            resources.ApplyResources(this.WebView, "WebView");
-            this.WebView.IsWebBrowserContextMenuEnabled = false;
-            this.WebView.Name = "WebView";
-            this.WebView.ScriptErrorsSuppressed = true;
-            this.WebView.Url = new System.Uri("https://www.accuradio.com/", System.UriKind.Absolute);
             // 
             // NotifyIcon
             // 
@@ -157,15 +149,6 @@
             this.CloseButton.Overflow = System.Windows.Forms.ToolStripItemOverflow.Never;
             this.CloseButton.Click += new System.EventHandler(this.CloseButton_Click);
             // 
-            // MinimizeButton
-            // 
-            this.MinimizeButton.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.MinimizeButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            resources.ApplyResources(this.MinimizeButton, "MinimizeButton");
-            this.MinimizeButton.Name = "MinimizeButton";
-            this.MinimizeButton.Overflow = System.Windows.Forms.ToolStripItemOverflow.Never;
-            this.MinimizeButton.Click += new System.EventHandler(this.MinimizeButton_Click);
-            // 
             // MaximizeButton
             // 
             this.MaximizeButton.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
@@ -174,6 +157,15 @@
             this.MaximizeButton.Name = "MaximizeButton";
             this.MaximizeButton.Overflow = System.Windows.Forms.ToolStripItemOverflow.Never;
             this.MaximizeButton.Click += new System.EventHandler(this.MaximizeButton_Click);
+            // 
+            // MinimizeButton
+            // 
+            this.MinimizeButton.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.MinimizeButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this.MinimizeButton, "MinimizeButton");
+            this.MinimizeButton.Name = "MinimizeButton";
+            this.MinimizeButton.Overflow = System.Windows.Forms.ToolStripItemOverflow.Never;
+            this.MinimizeButton.Click += new System.EventHandler(this.MinimizeButton_Click);
             // 
             // RefreshButton
             // 
@@ -192,6 +184,15 @@
             this.SettingsButton.Name = "SettingsButton";
             this.SettingsButton.Overflow = System.Windows.Forms.ToolStripItemOverflow.Never;
             this.SettingsButton.Click += new System.EventHandler(this.SettingsButton_Click);
+            // 
+            // WebView
+            // 
+            this.WebView.AllowExternalDrop = true;
+            this.WebView.CreationProperties = null;
+            this.WebView.DefaultBackgroundColor = System.Drawing.Color.White;
+            resources.ApplyResources(this.WebView, "WebView");
+            this.WebView.Name = "WebView";
+            this.WebView.ZoomFactor = 1D;
             // 
             // MainForm
             // 
@@ -214,14 +215,13 @@
             this.NotifyIconContextMenuStrip.ResumeLayout(false);
             this.ToolStrip.ResumeLayout(false);
             this.ToolStrip.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.WebView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.WebBrowser WebView;
         private System.Windows.Forms.NotifyIcon NotifyIcon;
         private System.Windows.Forms.ContextMenuStrip NotifyIconContextMenuStrip;
         private System.Windows.Forms.ToolStripMenuItem RestoreWindowToolStripMenuItem;
@@ -238,6 +238,7 @@
         private System.Windows.Forms.ToolStripButton MaximizeButton;
         private System.Windows.Forms.ToolStripButton SettingsButton;
         private System.Windows.Forms.ToolStripMenuItem AlwaysOntopToolStripMenuItem;
+        private Microsoft.Web.WebView2.WinForms.WebView2 WebView;
     }
 }
 

@@ -12,8 +12,6 @@ namespace YouTubeBrowserApp
         {
             InitializeComponent();
 
-            WebView.DocumentTitleChanged += WebView_DocumentTitleChanged;
-
             // Adjust Tool Strip Size in High DPI mode - https://www.medo64.com/2014/01/scaling-toolstrip-with-dpi/
             Font = SystemFonts.MessageBoxFont;
             using (var graphics = CreateGraphics())
@@ -98,7 +96,7 @@ namespace YouTubeBrowserApp
             Settings.Default.Save();
         }
 
-        private void WebView_DocumentTitleChanged(object sender, EventArgs e)
+        private void WebView_DocumentTitleChanged(object sender, object e)
         {
             if (InvokeRequired)
             {
@@ -106,7 +104,7 @@ namespace YouTubeBrowserApp
                 return;
             }
 
-            var title = WebView.DocumentTitle;
+            var title = WebView.CoreWebView2.DocumentTitle;
 
             if (String.IsNullOrWhiteSpace(title))
                 title = Resources.AppTitle;
@@ -125,34 +123,52 @@ namespace YouTubeBrowserApp
                 return;
             }
 
-            SetAlwaysOnTop(Settings.Default.AlwaysOnTop);
-
-            if (Settings.Default.EnableRememberWindowBound)
+            WebView.EnsureCoreWebView2Async().ContinueWith((context) =>
             {
-                if (!Settings.Default.LastWindowSize.IsEmpty)
-                    Size = Settings.Default.LastWindowSize;
+                if (context.Exception != null)
+                {
+                    Invoke(new Func<string, DialogResult>(MessageBox.Show), context.Exception.Message);
+                    return;
+                }
 
-                if (!Settings.Default.LastWindowPosition.IsEmpty)
-                    Location = Settings.Default.LastWindowPosition;
+                Invoke(new Action<object, EventArgs>((_sender, _e) =>
+                {
+                    WebView.CoreWebView2.Settings.AreDevToolsEnabled = false;
+                    WebView.CoreWebView2.Settings.AreDefaultScriptDialogsEnabled = false;
+                    WebView.CoreWebView2.Settings.AreHostObjectsAllowed = false;
+                    WebView.CoreWebView2.DocumentTitleChanged += WebView_DocumentTitleChanged;
 
-                FormWindowState state;
-                if (Enum.TryParse(Settings.Default.LastWindowState, out state))
-                    WindowState = state;
-            }
+                    SetAlwaysOnTop(Settings.Default.AlwaysOnTop);
 
-            var firstArgs = Environment.GetCommandLineArgs().ElementAtOrDefault(1);
-            var uri = new Uri("https://www.youtube.com/", UriKind.Absolute);
-            var lastUri = default(Uri);
+                    if (Settings.Default.EnableRememberWindowBound)
+                    {
+                        if (!Settings.Default.LastWindowSize.IsEmpty)
+                            Size = Settings.Default.LastWindowSize;
 
-            if (!string.IsNullOrWhiteSpace(firstArgs))
-                uri = new Uri($"https://www.youtube.com/watch?v={Uri.EscapeDataString(firstArgs)}", UriKind.Absolute);
-            else if (Settings.Default.EnableRememberLastUrl &&
-                Uri.TryCreate(Settings.Default.LastUrl, UriKind.Absolute, out lastUri) &&
-                (lastUri.Scheme == Uri.UriSchemeHttp || lastUri.Scheme == Uri.UriSchemeHttps) &&
-                lastUri.Host.EndsWith("youtube.com", StringComparison.OrdinalIgnoreCase))
-                uri = lastUri;
+                        if (!Settings.Default.LastWindowPosition.IsEmpty)
+                            Location = Settings.Default.LastWindowPosition;
 
-            WebView.Navigate(uri);
+                        FormWindowState state;
+                        if (Enum.TryParse(Settings.Default.LastWindowState, out state))
+                            WindowState = state;
+                    }
+
+                    var firstArgs = Environment.GetCommandLineArgs().ElementAtOrDefault(1);
+                    var uri = new Uri("https://www.youtube.com/", UriKind.Absolute);
+                    var lastUri = default(Uri);
+
+                    if (!string.IsNullOrWhiteSpace(firstArgs))
+                        uri = new Uri($"https://www.youtube.com/watch?v={Uri.EscapeDataString(firstArgs)}", UriKind.Absolute);
+                    else if (Settings.Default.EnableRememberLastUrl &&
+                        Uri.TryCreate(Settings.Default.LastUrl, UriKind.Absolute, out lastUri) &&
+                        (lastUri.Scheme == Uri.UriSchemeHttp || lastUri.Scheme == Uri.UriSchemeHttps) &&
+                        lastUri.Host.EndsWith("youtube.com", StringComparison.OrdinalIgnoreCase))
+                        uri = lastUri;
+
+                    WebView.CoreWebView2.Navigate(uri.AbsoluteUri);
+
+                }), sender, e);
+            });
         }
 
         private void MainForm_Resize(object sender, EventArgs e)
@@ -260,15 +276,7 @@ namespace YouTubeBrowserApp
                 return;
             }
 
-            var option = WebBrowserRefreshOption.Normal;
-
-            if (Control.ModifierKeys == Keys.Control ||
-                Control.ModifierKeys == Keys.ControlKey ||
-                Control.ModifierKeys == Keys.LControlKey ||
-                Control.ModifierKeys == Keys.RControlKey)
-                option = WebBrowserRefreshOption.Completely;
-
-            WebView.Refresh(option);
+            WebView.Refresh();
         }
 
         private void MainForm_KeyUp(object sender, KeyEventArgs e)
@@ -377,7 +385,7 @@ namespace YouTubeBrowserApp
             }
 
             if (Settings.Default.EnableRememberLastUrl)
-                Settings.Default.LastUrl = WebView.Url.AbsoluteUri;
+                Settings.Default.LastUrl = WebView.Source.AbsoluteUri;
 
             Settings.Default.Save();
         }
