@@ -49,11 +49,11 @@ namespace AccuRadioBrowserApp
 
             if (visible)
             {
-                ShowInTaskbar = true;
                 WindowState = FormWindowState.Minimized;
                 Show();
                 WindowState = FormWindowState.Normal;
                 Activate();
+                ShowInTaskbar = true;
             }
             else
             {
